@@ -44,12 +44,12 @@ def perform_gridsearch(model_name, model, training_data, label_data):
 
     # Identify optimal parameters, model and score
     best_params = grid_search.best_params_
-    print(model_name, "Best Params:", best_params)
+    print(model_name, "- Best Params:", best_params)
 
     best_est = grid_search.best_estimator_
-    print(model_name, "Best Estimator:", best_est)
+    print(model_name, "- Best Estimator:", best_est)
 
     best_score = np.sqrt(-1 * grid_search.best_score_)
-    print(model_name, "Best Score:", best_score)
+    print(model_name, "- Best Score:", best_score)
 
     return best_params, best_est, best_score
