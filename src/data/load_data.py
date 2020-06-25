@@ -5,6 +5,9 @@ This file supports loading project data into memory.
 
 '''
 
+# Module importations
+import pandas as pd
+
 def load_motor_data():
     """Load Dataset
     ======================================
