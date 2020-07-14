@@ -55,7 +55,7 @@ def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
 
     # Train model
     print("[mlp nn] Training model ...")
-    model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 10, batch_size = 8)
+    model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 20, batch_size = 8)
 
     # Return model
     return model
