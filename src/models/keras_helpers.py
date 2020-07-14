@@ -33,22 +33,21 @@ def create_multilayer_perceptron(dim):
 
     return model
 
-def train_multilayer_perceptron(model, dataset, target):
+def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
     """
     Train a multilayer perceptron model from training data.
     ======================================
 
     Input:
         model (Sequential) - Multilayer perceptron for training.
-        dataset (dataframe) - Dataframe containing training dataset.
-        target (dataframe) - Target data for model training.
+        X_train (Array) - Array of training data.
+        X_test (Array) - Array of test data.
+        y_train (Array) - Array of training data.
+        y_test (Array) - Array of test data.
 
     Output:
         model (Sequential) - Multi-layer perceptron model, fitted to training data.
     """
-
-    # Create training and test datasets
-    X_train, X_test, y_train, y_test = train_test_split(dataset, target, test_size = 0.2, random_state = 0)
 
     # Compile model
     opt = Adam(lr = 1e-3, decay = 1e-3 /200)
@@ -57,15 +56,6 @@ def train_multilayer_perceptron(model, dataset, target):
     # Train model
     print("[mlp nn] Training model ...")
     model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 10, batch_size = 8)
-
-    # Make predictions on the test data.
-    y_pred = model.predict(X_test)
-
-    mae = mean_absolute_error(y_test, y_pred)
-    print("mlp nn MAE: " + str(mae))
-
-    rmse = mean_squared_error(y_test, y_pred, squared = False)
-    print("mlp nn MSE: " + str(rmse))
 
     # Return model
     return model
