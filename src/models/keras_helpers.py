@@ -30,6 +30,7 @@ def create_multilayer_perceptron(dim):
     # Define the network
     model = Sequential()
     model.add(Dense(100, input_dim = dim, activation = "relu"))
+    model.add(Dense(60, activation = "relu"))
     model.add(Dense(30, activation = "relu"))
     model.add(Dense(1))
 
@@ -52,7 +53,7 @@ def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
     """
 
     # Compile model
-    opt = "sgd"
+    opt = "adam"
     model.compile(loss = "mean_squared_error", optimizer = opt)
 
     # Train model
