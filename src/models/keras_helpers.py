@@ -24,12 +24,14 @@ def create_multilayer_perceptron(dim):
     Output:
         model (Sequential) - A multilayer perceptron model designed for the data profile.
     """
+    # Print input dimension
+    print("Input Dimension:", dim)
 
     # Define the network
     model = Sequential()
-    model.add(Dense(8, input_dim = dim, activation = "relu"))
-    model.add(Dense(4, activation = "relu"))
-    model.add(Dense(1, activation = "linear"))
+    model.add(Dense(30, input_dim = dim, activation = "relu"))
+    model.add(Dense(10, activation = "relu"))
+    model.add(Dense(1))
 
     return model
 
@@ -50,8 +52,8 @@ def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
     """
 
     # Compile model
-    opt = Adam(lr = 1e-3, decay = 1e-3 /200)
-    model.compile(loss = "mean_absolute_percentage_error", optimizer = opt)
+    opt = "sgd"
+    model.compile(loss = "mean_squared_error", optimizer = opt)
 
     # Train model
     print("[mlp nn] Training model ...")
