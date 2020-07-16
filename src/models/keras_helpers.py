@@ -62,3 +62,23 @@ def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
 
     # Return model
     return model
+
+def save_sequential_model(model, name):
+    """
+    Save model to Models folder using described name.
+    ======================================
+
+    Input:
+        model (Sequential) - The model to be saved.
+        name (string) - Model unique identifier
+
+    Output:
+        None.
+    """
+
+    # Create full filepath, including name
+    filepath = r'C:\Developer\electric_motor_thermal_modelling\Models'
+    filepath_full = filepath + '\\' + name + '.h5'
+
+    # Save model
+    model.save(filepath = filepath_full, overwrite = True, include_optimizer = True, save_format = 'h5')
