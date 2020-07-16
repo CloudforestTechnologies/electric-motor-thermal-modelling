@@ -29,8 +29,8 @@ def create_multilayer_perceptron(dim):
 
     # Define the network
     model = Sequential()
-    model.add(Dense(30, input_dim = dim, activation = "relu"))
-    model.add(Dense(10, activation = "relu"))
+    model.add(Dense(100, input_dim = dim, activation = "relu"))
+    model.add(Dense(30, activation = "relu"))
     model.add(Dense(1))
 
     return model
