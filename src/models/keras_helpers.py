@@ -58,7 +58,7 @@ def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
 
     # Train model
     print("[mlp nn] Training model ...")
-    model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 20, batch_size = 8)
+    model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 1, batch_size = 8)
 
     # Return model
     return model
@@ -79,6 +79,7 @@ def save_sequential_model(model, name):
     # Create full filepath, including name
     filepath = r'C:\Developer\electric_motor_thermal_modelling\Models'
     filepath_full = filepath + '\\' + name + '.h5'
+    print("Save Path:", filepath_full)
 
     # Save model
-    model.save(filepath = filepath_full, overwrite = True, include_optimizer = True, save_format = 'h5')
+    model.save(filepath = filepath_full, overwrite = True, include_optimizer = True)
