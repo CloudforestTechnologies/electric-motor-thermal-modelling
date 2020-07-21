@@ -15,7 +15,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import keras
 
-def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3 input_shape = [8]):
+def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [8]):
     """
     Build and compile multilayer perceptron model.
     ======================================
@@ -51,7 +51,7 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
 
     return model
 
-def train_multilayer_perceptron(X_train, X_test, y_train, y_test, epochs = 10):
+def train_multilayer_perceptron():
     """
     Wrap then train a multilayer perceptron model from training data.
     ======================================
@@ -68,11 +68,11 @@ def train_multilayer_perceptron(X_train, X_test, y_train, y_test, epochs = 10):
     """
 
     # Wrap model for use with scikit learn.
-    wrapped_model = KerasRegressor(build_fn = build_multilayer_perceptron(X_train.shape[1]))
+    wrapped_model = KerasRegressor(build_multilayer_perceptron)
 
     # Train model
-    print("[mlp nn] Training model ...")
-    wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = epochs, callbacks = [keras.callbacks.EarlyStopping(patience = 10)])
+    #print("[mlp nn] Training model ...")
+    #wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = epochs, callbacks = [keras.callbacks.EarlyStopping(patience = 10)])
 
     # Return model
     return wrapped_model
