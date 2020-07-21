@@ -49,7 +49,12 @@ def compile_multilayer_perceptron(model, loss = "mse", opt = "adam"):
     Output:
         model (Sequential) - Compiled model.
     """
-    pass
+
+    # Compile model
+    model.compile(loss = loss, optimizer = opt)
+
+    # Return model
+    return model
 
 def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
     """
