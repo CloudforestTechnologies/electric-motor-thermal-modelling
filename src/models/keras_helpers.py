@@ -15,14 +15,15 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import keras
 
-def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_shape = [8]):
+def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3 input_shape = [8]):
     """
-    Build and compile a multilayer perceptron model.
+    Build and compile multilayer perceptron model.
     ======================================
 
     Input:
         n_hidden (int) = Number of hidden layers in model.
         n_neurons (int) = Number of neurons in hidden layer.
+        learning_rate (float) = Learning rate for optimiser.
         input_dim (array) - An array used to set the shape of the layers.
 
     Output:
@@ -31,7 +32,7 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_shape = [8])
     # Print input dimension
     print("Input Dimension:", input_shape)
 
-    # Define the network
+
     model = Sequential()
 
     # Create input layer
@@ -45,35 +46,36 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_shape = [8])
     model.add(Dense(1))
 
     # Compile model
-    model.compile(loss = "mse", optimizer = "adam")
+    optimiser = Adam(learning_rate = learning_rate)
+    model.compile(loss = "mse", optimizer = optimiser)
 
     return model
 
-def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
+def train_multilayer_perceptron(X_train, X_test, y_train, y_test, epochs = 10):
     """
     Wrap then train a multilayer perceptron model from training data.
     ======================================
 
     Input:
-        model (Sequential) - Compiled model for training.
         X_train (Array) - Array of training data.
         X_test (Array) - Array of test data.
         y_train (Array) - Array of training data.
         y_test (Array) - Array of test data.
+        epochs (int) - Number of epochs to use
 
     Output:
         wrapped_model (KerasRegressor) - Trained model, wrapped for use with scikit-learn API.
     """
 
     # Wrap model for use with scikit learn.
-    wrapped_model = KerasRegressor(model)
+    wrapped_model = KerasRegressor(build_fn = build_multilayer_perceptron(X_train.shape[1]))
 
     # Train model
     print("[mlp nn] Training model ...")
-    wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 1, callbacks = [keras.callbacks.EarlyStopping(patience = 10)])
+    wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = epochs, callbacks = [keras.callbacks.EarlyStopping(patience = 10)])
 
     # Return model
-    return model
+    return wrapped_model
 
 def save_sequential_model(model, name):
     """
