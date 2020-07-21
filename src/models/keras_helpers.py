@@ -15,22 +15,9 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import keras
 
-def build_multilayer_perceptron():
+def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_shape = [8]):
     """
-    Create, compile and train a multilayer perceptron model.
-    ======================================
-
-    Input:
-        dim (array) - An array used to set the shape of the layers.
-
-    Output:
-        model (Sequential) - A multilayer perceptron model designed for the data profile.
-    """
-    pass
-
-def create_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_shape = [8]):
-    """
-    Build and return a multilayer perceptron model.
+    Build and compile a multilayer perceptron model.
     ======================================
 
     Input:
@@ -57,26 +44,9 @@ def create_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_shape = [8]
     # Add output layer
     model.add(Dense(1))
 
-    return model
-
-def compile_multilayer_perceptron(model, loss = "mse", opt = "adam"):
-    """
-    Compile multilayer perceptron model.
-    ======================================
-
-    Input:
-        model (Sequential) - Model to be compiled.
-        loss (String) - Type of loss used during compilation.
-        opt (String) - Name of optimiser to be used during compilation.
-
-    Output:
-        model (Sequential) - Compiled model.
-    """
-
     # Compile model
-    model.compile(loss = loss, optimizer = opt)
+    model.compile(loss = "mse", optimizer = "adam")
 
-    # Return model
     return model
 
 def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
@@ -100,8 +70,7 @@ def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
 
     # Train model
     print("[mlp nn] Training model ...")
-    wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 1)
-    callbacks = [keras.callbacks.EarlyStopping(patience = 10)]
+    wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 1, callbacks = [keras.callbacks.EarlyStopping(patience = 10)])
 
     # Return model
     return model
