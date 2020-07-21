@@ -9,9 +9,11 @@ Helper routines for building & training neural networks using keras API
 from keras.layers.core import Dense, InputLayer
 from keras.models import Sequential
 from keras.optimizers import Adam
+from keras.wrappers.scikit_learn import KerasRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
+import keras
 
 def build_multilayer_perceptron():
     """
@@ -79,27 +81,27 @@ def compile_multilayer_perceptron(model, loss = "mse", opt = "adam"):
 
 def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
     """
-    Train a multilayer perceptron model from training data.
+    Wrap then train a multilayer perceptron model from training data.
     ======================================
 
     Input:
-        model (Sequential) - Multilayer perceptron for training.
+        model (Sequential) - Compiled model for training.
         X_train (Array) - Array of training data.
         X_test (Array) - Array of test data.
         y_train (Array) - Array of training data.
         y_test (Array) - Array of test data.
 
     Output:
-        model (Sequential) - Multi-layer perceptron model, fitted to training data.
+        wrapped_model (KerasRegressor) - Trained model, wrapped for use with scikit-learn API.
     """
 
-    # Compile model
-    opt = "adam"
-    model.compile(loss = "mean_squared_error", optimizer = opt)
+    # Wrap model for use with scikit learn.
+    wrapped_model = KerasRegressor(model)
 
     # Train model
     print("[mlp nn] Training model ...")
-    model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 1, batch_size = 8)
+    wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 1)
+    callbacks = [keras.callbacks.EarlyStopping(patience = 10)]
 
     # Return model
     return model
