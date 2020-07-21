@@ -15,7 +15,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import keras
 
-def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [8]):
+def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [11]):
     """
     Build and compile multilayer perceptron model.
     ======================================
@@ -46,7 +46,7 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
     model.add(Dense(1))
 
     # Compile model
-    optimiser = Adam(learning_rate = learning_rate)
+    optimiser = keras.optimizers.SGD(lr = learning_rate)
     model.compile(loss = "mse", optimizer = optimiser)
 
     return model
