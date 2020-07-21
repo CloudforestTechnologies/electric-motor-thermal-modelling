@@ -24,14 +24,11 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
         n_hidden (int) = Number of hidden layers in model.
         n_neurons (int) = Number of neurons in hidden layer.
         learning_rate (float) = Learning rate for optimiser.
-        input_dim (array) - An array used to set the shape of the layers.
+        input_shape (array) - An array used to set the shape of the layers.
 
     Output:
         model (Sequential) - A multilayer perceptron model designed for the data profile.
     """
-    # Print input dimension
-    print("Input Dimension:", input_shape)
-
 
     model = Sequential()
 
@@ -51,28 +48,20 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
 
     return model
 
-def train_multilayer_perceptron():
+def wrap_model():
     """
-    Wrap then train a multilayer perceptron model from training data.
+    Build and wrap keras-TF model for use with scikit-learn API.
     ======================================
 
     Input:
-        X_train (Array) - Array of training data.
-        X_test (Array) - Array of test data.
-        y_train (Array) - Array of training data.
-        y_test (Array) - Array of test data.
-        epochs (int) - Number of epochs to use
+        None
 
     Output:
-        wrapped_model (KerasRegressor) - Trained model, wrapped for use with scikit-learn API.
+        wrapped_model (KerasRegressor) - Wrapped model for use with scikit-learn API.
     """
 
-    # Wrap model for use with scikit learn.
+    # Build and wrap model.
     wrapped_model = KerasRegressor(build_multilayer_perceptron)
-
-    # Train model
-    #print("[mlp nn] Training model ...")
-    #wrapped_model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = epochs, callbacks = [keras.callbacks.EarlyStopping(patience = 10)])
 
     # Return model
     return wrapped_model
