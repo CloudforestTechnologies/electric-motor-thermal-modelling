@@ -6,16 +6,16 @@ Helper routines for building & training neural networks using keras API
 '''
 
 # Module Importations
-from keras.layers.core import Dense
+from keras.layers.core import Dense, InputLayer
 from keras.models import Sequential
 from keras.optimizers import Adam
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
-def create_multilayer_perceptron(dim):
+def build_multilayer_perceptron():
     """
-    Build and return a multilayer perceptron model.
+    Create, compile and train a multilayer perceptron model.
     ======================================
 
     Input:
@@ -24,14 +24,35 @@ def create_multilayer_perceptron(dim):
     Output:
         model (Sequential) - A multilayer perceptron model designed for the data profile.
     """
+    pass
+
+def create_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_dim =[8]):
+    """
+    Build and return a multilayer perceptron model.
+    ======================================
+
+    Input:
+        n_hidden (int) = Number of hidden layers in model.
+        n_neurons (int) = Number of neurons in hidden layer.
+        input_dim (array) - An array used to set the shape of the layers.
+
+    Output:
+        model (Sequential) - A multilayer perceptron model designed for the data profile.
+    """
     # Print input dimension
-    print("Input Dimension:", dim)
+    print("Input Dimension:", input_dim)
 
     # Define the network
     model = Sequential()
-    model.add(Dense(100, input_dim = dim, activation = "relu"))
-    model.add(Dense(60, activation = "relu"))
-    model.add(Dense(30, activation = "relu"))
+
+    # Create input layer
+    model.add(InputLayer(input_shape = input_dim, activation = "relu"))
+
+    # Add further layers
+    for layer in range(n_hidden):
+        model.add(Dense(n_neurons, activation = "relu"))
+
+    # Add output layer
     model.add(Dense(1))
 
     return model
@@ -43,7 +64,7 @@ def compile_multilayer_perceptron(model, loss = "mse", opt = "adam"):
 
     Input:
         model (Sequential) - Model to be compiled.
-        loss (String) - Type of loss used during compilation. 
+        loss (String) - Type of loss used during compilation.
         opt (String) - Name of optimiser to be used during compilation.
 
     Output:
