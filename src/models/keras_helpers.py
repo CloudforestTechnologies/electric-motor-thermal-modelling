@@ -6,7 +6,7 @@ Helper routines for building & training neural networks using keras API
 '''
 
 # Module Importations
-from keras.layers.core import Dense, InputLayer
+from keras.layers import Dense, InputLayer
 from keras.models import Sequential
 from keras.optimizers import Adam
 from keras.wrappers.scikit_learn import KerasRegressor
@@ -28,7 +28,7 @@ def build_multilayer_perceptron():
     """
     pass
 
-def create_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_dim =[8]):
+def create_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_shape = [8]):
     """
     Build and return a multilayer perceptron model.
     ======================================
@@ -42,13 +42,13 @@ def create_multilayer_perceptron(n_hidden = 2, n_neurons = 30, input_dim =[8]):
         model (Sequential) - A multilayer perceptron model designed for the data profile.
     """
     # Print input dimension
-    print("Input Dimension:", input_dim)
+    print("Input Dimension:", input_shape)
 
     # Define the network
     model = Sequential()
 
     # Create input layer
-    model.add(InputLayer(input_shape = input_dim, activation = "relu"))
+    model.add(InputLayer(input_shape = input_shape))
 
     # Add further layers
     for layer in range(n_hidden):
