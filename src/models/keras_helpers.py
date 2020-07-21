@@ -36,6 +36,21 @@ def create_multilayer_perceptron(dim):
 
     return model
 
+def compile_multilayer_perceptron(model, loss = "mse", opt = "adam"):
+    """
+    Compile multilayer perceptron model.
+    ======================================
+
+    Input:
+        model (Sequential) - Model to be compiled.
+        loss (String) - Type of loss used during compilation. 
+        opt (String) - Name of optimiser to be used during compilation.
+
+    Output:
+        model (Sequential) - Compiled model.
+    """
+    pass
+
 def train_multilayer_perceptron(model, X_train, X_test, y_train, y_test):
     """
     Train a multilayer perceptron model from training data.
