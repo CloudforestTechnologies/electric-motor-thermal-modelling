@@ -14,6 +14,9 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import keras
+import time
+
+project_code = 'YC'
 
 def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [11]):
     """
@@ -77,7 +80,14 @@ def name_model():
     Output:
         name (string) - Model name.
     """
-    pass
+    
+    # Generate filename
+    timestamp = time.strftime('%Y_%m_%d-%H_%M_%S')
+    file_format = '.h5'
+
+    model_name = project_code + '_model_' + timestamp + file_format
+
+    return model_name
 
 def save_model(model, name):
     """
