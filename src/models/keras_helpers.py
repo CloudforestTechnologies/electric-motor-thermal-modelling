@@ -66,6 +66,19 @@ def wrap_model():
     # Return model
     return wrapped_model
 
+def name_model():
+    """
+    Returns a time-stamped model name.
+    ======================================
+
+    Input:
+        None.
+
+    Output:
+        name (string) - Model name.
+    """
+    pass
+
 def save_model(model, name):
     """
     Save model to Models folder using described name.
