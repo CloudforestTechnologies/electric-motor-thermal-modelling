@@ -53,3 +53,23 @@ def perform_gridsearch(model_name, model, training_data, label_data):
     print(model_name, "- Best Score:", best_score)
 
     return best_params, best_est, best_score
+
+def perform_keras_rnd_search_cv():
+    """Perform NN Hyperparameter Randomised Gridsearch Optimisation
+    ======================================
+    Explores network hyperparameter optimisation through randomised cross-validation.
+    
+    Args:
+        save_path (string) - Save path used for checkpointing.
+        model (KerasRegressor) - Wrapped Sequential model to be trained and optimised.
+        X_train (array) - Training input data.
+        X_test (array) - Validation input data.
+        y_train (array) - Training target data.
+        y_test (array) - Validation target data.
+        
+    Returns:
+        best_params (dict) - Best parameters determined by optimisation.
+        best_est (model) - Best estimator with optimised hyperparameters.
+        best_score (float64) - Best score produced by best model.
+    """
+    pass
