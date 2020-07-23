@@ -100,7 +100,13 @@ def make_save_string(file_name):
     Output:
         save_string (string) - Save string for specified model.
     """
-    pass
+    
+    # Filepath for saved file
+    filepath = r'C:\Developer\electric_motor_thermal_modelling\Models'
+
+    filepath_full = filepath + file_name
+
+    return filepath_full
 
 def save_model(model, name):
     """
