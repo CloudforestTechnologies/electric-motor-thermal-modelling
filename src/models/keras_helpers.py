@@ -36,7 +36,7 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
     model = Sequential()
 
     # Create input layer
-    model.add(InputLayer(input_shape = input_shape))
+    #model.add(InputLayer(input_shape = input_shape))
 
     # Add further layers
     for layer in range(n_hidden):
