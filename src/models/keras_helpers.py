@@ -104,7 +104,7 @@ def make_save_string(file_name):
     # Filepath for saved file
     filepath = r'C:\Developer\electric_motor_thermal_modelling\Models'
 
-    filepath_full = filepath + file_name
+    filepath_full = filepath + '\\' + file_name
 
     return filepath_full
 
