@@ -66,7 +66,7 @@ def wrap_model():
     # Return model
     return wrapped_model
 
-def save_sequential_model(model, name):
+def save_model(model, name):
     """
     Save model to Models folder using described name.
     ======================================
