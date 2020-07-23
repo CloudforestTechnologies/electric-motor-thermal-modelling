@@ -89,6 +89,19 @@ def name_model():
 
     return model_name
 
+def make_save_string(file_name):
+    """
+    Returns a complete save string for saving a model.
+    ======================================
+
+    Input:
+        file_name (string) - Filename used in save string.
+
+    Output:
+        save_string (string) - Save string for specified model.
+    """
+    pass
+
 def save_model(model, name):
     """
     Save model to Models folder using described name.
