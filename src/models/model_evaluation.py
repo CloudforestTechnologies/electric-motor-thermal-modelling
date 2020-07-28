@@ -28,7 +28,7 @@ def evaluate_model(model_name, y_true, y_pred):
     r2_eval = evaluate_r2(y_true, y_pred)
 
     # Print results
-
+    print_evaluation(model_name, mae_eval, rmse_eval, r2_eval)
 
 def evaluate_mae(y_true, y_pred):
 
@@ -50,5 +50,8 @@ def evaluate_r2(y_true, y_pred):
 
     return r2_eval
 
-def print_evaluation():
-    pass
+def print_evaluation(model_name, mae_eval, rmse_eval, r2_eval):
+    
+    print(model_name, "mae (Eval):", mae_eval)
+    print(model_name, "rmse (Eval):", rmse_eval)
+    print(model_name, "r2 (Eval):", r2_eval)
