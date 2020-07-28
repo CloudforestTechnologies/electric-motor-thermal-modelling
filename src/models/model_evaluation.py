@@ -17,9 +17,12 @@ def evaluate_model(model_name, y_true, y_pred):
     ======================================
 
     Input:
+        model_name (string) - Name of model.
+        y_true (array) - Untouched evaluation label data.
+        y_pred (array) - Model prediction based on evaluation data.
 
     Output:
-        
+        None
     """
 
     # Calculate performance metrics
@@ -31,6 +34,17 @@ def evaluate_model(model_name, y_true, y_pred):
     print_evaluation(model_name, mae_eval, rmse_eval, r2_eval)
 
 def evaluate_rmse(y_true, y_pred):
+    """
+    Evaluate root mean squared error.
+    ======================================
+
+    Input:
+        y_true (array) - Untouched evaluation label data.
+        y_pred (array) - Model prediction based on evaluation data.
+
+    Output:
+        rmse_eval (float) - Calculated root mean squared error.
+    """
 
     mse_eval = mean_squared_error(y_true, y_pred)
 
@@ -39,18 +53,53 @@ def evaluate_rmse(y_true, y_pred):
     return rmse_eval
 
 def evaluate_mae(y_true, y_pred):
+    """
+    Evaluate mean absolute error.
+    ======================================
+
+    Input:
+        y_true (array) - Untouched evaluation label data.
+        y_pred (array) - Model prediction based on evaluation data.
+
+    Output:
+        mae_eval (float) - Calculated mean absolute error.
+    """
 
     mae_eval = mean_absolute_error(y_true, y_pred)
     
     return mae_eval
 
 def evaluate_r2(y_true, y_pred):
+    """
+    Evaluate r2 performance metric.
+    ======================================
+
+    Input:
+        y_true (array) - Untouched evaluation label data.
+        y_pred (array) - Model prediction based on evaluation data.
+
+    Output:
+        r2_eval (float) - Calculated r2 performance metric.
+    """
     
     r2_eval = r2_score(y_true, y_pred)
 
     return r2_eval
 
 def print_evaluation(model_name, mae_eval, rmse_eval, r2_eval):
+    """
+    Print performance metrics of associated model.
+    ======================================
+
+    Input:
+        model_name (string) - Name of model.
+        rmse_eval (float) - Calculated root mean squared error.
+        mae_eval (float) - Untouched evaluation label data.
+        r2_eval (float) - Calculated r2 performance metric.
+
+    Output:
+        None.
+    """
     
     print(model_name, "rmse (Eval):", rmse_eval)
     print(model_name, "mae (Eval):", mae_eval)
