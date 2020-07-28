@@ -9,6 +9,7 @@ Helper routines for evaluating model performance
 import numpy as np
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
 
 def evaluate_model(model_name, y_true, y_pred):
     """
@@ -24,6 +25,7 @@ def evaluate_model(model_name, y_true, y_pred):
     # Calculate performance metrics
     mae_eval = evaluate_mae(y_true, y_pred)
     rmse_eval = evaluate_rmse(y_true, y_pred)
+    r2_eval = evaluate_r2(y_true, y_pred)
 
     # Print results
 
@@ -42,8 +44,11 @@ def evaluate_rmse(y_true, y_pred):
 
     return rmse_eval    
 
-def evaluate_r2():
-    pass
+def evaluate_r2(y_true, y_pred):
+    
+    r2_eval = r2_score(y_true, y_pred)
+
+    return r2_eval
 
 def print_evaluation():
     pass
