@@ -21,15 +21,15 @@ def generate_fig_save_string(filename):
         save_string (string) - String to use for saving file.
     """
 
-    # Location files are saved
-    #save_directory = r'C:\Users\ASUS-PC\OneDrive\Cloudforest Technologies\M. Projects\Yellow Cuckoo\Figures'
+    # Save files to project
+    filedirectory = r'C:\Developer\electric_motor_thermal_modelling\Reports\Figures'
 
     # Retrieve timestamp
     timestamp = datetime.now()
     timestamp_str = timestamp.strftime('%Y-%m-%d %H:%M:%S')
 
-    # Create filename
-    filename = filename + ' ' + timestamp_str + '.png'
+    # Create filepath
+    filepath = filedirectory + ' ' + timestamp_str + '.png'
 
     # Return save string
     #save_string = save_directory + '\\' + filename
