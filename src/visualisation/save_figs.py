@@ -29,9 +29,9 @@ def generate_fig_save_string(filename):
     timestamp_str = timestamp.strftime('%Y-%m-%d %H:%M:%S')
 
     # Create filepath
-    filepath = filedirectory + ' ' + timestamp_str + '.png'
+    filepath = filedirectory + '\\' + 'YC' + filename + '_' + timestamp_str + '.png'
 
     # Return save string
     #save_string = save_directory + '\\' + filename
     #save_string = os.path.join(save_directory, filename)
-    return filename
+    return filepath
