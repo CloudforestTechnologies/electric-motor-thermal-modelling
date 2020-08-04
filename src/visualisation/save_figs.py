@@ -8,6 +8,8 @@ This file supports saving figures with a particular configuration.
 # Module Importations
 from datetime import datetime
 
+TITLE_FONTSIZE = 18
+
 # Helper Method for saving figures
 def generate_fig_save_string(filename):
     """Save Figures
