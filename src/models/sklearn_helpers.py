@@ -22,7 +22,13 @@ def name_model(model_type):
         name (string) - Model name.
     """
 
-    pass
+    # Generate filename
+    timestamp = time.strftime('%Y_%m_%d-%H_%M_%S')
+    file_format = '.pkl'
+
+    model_name = project_code + '_' + model_type + '_' + timestamp + file_format
+
+    return model_name
 
 def save_model():
     """
