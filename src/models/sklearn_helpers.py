@@ -6,6 +6,7 @@ Helper routines for working with sklearn models
 '''
 
 # Module Importations
+from sklearn.externals import joblib
 import time
 
 project_code = 'YC'
@@ -30,17 +31,22 @@ def name_model(model_type):
 
     return model_name
 
-def save_model():
+def save_model(model, name):
     """
     Save model to Models folder using described name.
     ======================================
 
     Input:
-        model () - The model to be saved.
+        model (Pickle) - The model to be saved.
         name (string) - Model unique identifier
 
     Output:
         None.
     """
+    # Create full filepath
+    directory = r'C:\Developer\electric_motor_thermal_modelling\Models'
+    filepath_full = directory + '\\' + name
+    print("Save Path:", filepath_full) 
 
-    pass
+    # Save model
+    joblib.dump(value = model, filename = filepath_full)
