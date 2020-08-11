@@ -85,7 +85,7 @@ def name_model():
     timestamp = time.strftime('%Y_%m_%d-%H_%M_%S')
     file_format = '.h5'
 
-    model_name = project_code + '_model_' + timestamp + file_format
+    model_name = project_code + '_DNN_' + timestamp + file_format
 
     return model_name
 
