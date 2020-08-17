@@ -5,5 +5,5 @@
         "PYTHONPATH": "${workspaceFolder}/src",
     },
 
-    "python.envFile": "${workspaceFolder}/.env"
+    "python.envFile": "${workspaceFolder}/dev.env"
 }
