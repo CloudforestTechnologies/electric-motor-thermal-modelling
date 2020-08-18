@@ -18,7 +18,7 @@ import time
 
 project_code = 'YC'
 
-def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [11], output_shape = [1]):
+def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [11]):
     """
     Build and compile multilayer perceptron model.
     ======================================
@@ -28,12 +28,15 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
         n_neurons (int) = Number of neurons in hidden layer.
         learning_rate (float) = Learning rate for optimiser.
         input_shape (array) - An array used to set the shape of the layers.
+        output_shape (array) - An array used to set the shape of the output.
 
     Output:
         model (Sequential) - A multilayer perceptron model designed for the data profile.
     """
 
     model = Sequential()
+
+    # , output_shape = [3]
 
     # Create input layer
     #model.add(InputLayer(input_shape = input_shape))
@@ -43,7 +46,7 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
         model.add(Dense(n_neurons, input_shape = input_shape, activation = "relu"))
 
     # Add output layer
-    model.add(Dense(output_shape))
+    model.add(Dense(1))
 
     # Compile model
     optimiser = keras.optimizers.SGD(lr = learning_rate)
@@ -69,13 +72,13 @@ def wrap_model():
     # Return model
     return wrapped_model
 
-def name_model():
+def name_model(model_type):
     """
     Returns a time-stamped model name.
     ======================================
 
     Input:
-        None.
+        model_type (string) - Styling or identifier for model.
 
     Output:
         name (string) - Model name.
@@ -85,7 +88,7 @@ def name_model():
     timestamp = time.strftime('%Y_%m_%d-%H_%M_%S')
     file_format = '.h5'
 
-    model_name = project_code + '_DNN_' + timestamp + file_format
+    model_name = project_code + model_type + timestamp + file_format
 
     return model_name
 
