@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "D:\\Python\\Python374\\python.exe",
+    "python.pythonPath": "C:\\Developer\\Python\\Python366\\python.exe",
 
     "terminal.integrated.env.windows": {
         "PYTHONPATH": "${workspaceFolder}/src",
