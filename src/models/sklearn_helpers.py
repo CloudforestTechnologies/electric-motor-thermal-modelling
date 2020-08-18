@@ -49,4 +49,4 @@ def save_model(model, name):
     print("Save Path:", filepath_full) 
 
     # Save model
-    joblib.dump(value = model, filename = filepath_full)
+    joblib.dump(value = model, filename = filepath_full, compress = 3)
