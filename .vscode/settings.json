@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "C:\\Developer\\Python\\Python366\\python.exe"
+    "python.pythonPath": "D:\\Python\\Python374\\python.exe",
+
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}/src",
+    },
+
+    "python.envFile": "${workspaceFolder}/dev.env"
 }
