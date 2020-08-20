@@ -18,7 +18,7 @@ import time
 
 project_code = 'YC'
 
-def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [9]):
+def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e-3, input_shape = [11]):
     """
     Build and compile multilayer perceptron model.
     ======================================
@@ -46,7 +46,7 @@ def build_multilayer_perceptron(n_hidden = 2, n_neurons = 30, learning_rate = 3e
         model.add(Dense(n_neurons, input_shape = input_shape, activation = "relu"))
 
     # Add output layer
-    model.add(Dense(3))
+    model.add(Dense(1))
 
     # Compile model
     optimiser = keras.optimizers.SGD(lr = learning_rate)
