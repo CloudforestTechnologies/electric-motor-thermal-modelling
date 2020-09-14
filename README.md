@@ -31,3 +31,4 @@ Clone this repository from: https://github.com/PMetcalf/electric_motor_thermal_m
 Acknowledgements
 -----
 
+The kaggle project providing the data for this work can be accessed at: https://www.kaggle.com/wkirgsn/electric-motor-temperature, and was made available by the LEA Department at Paderborn University.
