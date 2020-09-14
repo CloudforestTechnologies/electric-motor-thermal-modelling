@@ -9,6 +9,7 @@ The most interesting target features are rotor / stator temperatures and torque,
 Being able to have strong estimators for the rotor temperature helps the automotive industry to manufacture motors with less material and enables control strategies to utilize the motor to its maximum capability. A precise torque estimate leads to more accurate and adequate control of the motor, reducing power losses and eventually heat build-up.
 
 Uses
+-----
 
 1. Data importation and visualisation.
 2. Data cleaning and preprocessing techniques.
@@ -16,12 +17,17 @@ Uses
 4. Model evaluation and comparison.
 
 Installation & Setup
+-----
 
 The following packages are required to support this project:
 
 numpy, pandas, matplotlib, seaborn, sklearn, keras.
 
 Clone
+-----
+
+Clone this repository from: https://github.com/PMetcalf/electric_motor_thermal_modelling.git
 
 Acknowledgements
+-----
 
