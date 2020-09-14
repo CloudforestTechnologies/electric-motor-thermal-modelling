@@ -19,10 +19,9 @@ Installation & Setup
 
 The following packages are required to support this project:
 
-numpy, pandas, matplotlib, seaborn, sklearn, keras, torch. 
+numpy, pandas, matplotlib, seaborn, sklearn, keras.
 
 Clone
-
 
 Acknowledgements
 
