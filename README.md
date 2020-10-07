@@ -8,6 +8,8 @@ The most interesting target features are rotor / stator temperatures and torque,
 
 Being able to have strong estimators for the rotor temperature helps the automotive industry to manufacture motors with less material and enables control strategies to utilize the motor to its maximum capability. A precise torque estimate leads to more accurate and adequate control of the motor, reducing power losses and eventually heat build-up.
 
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
 Uses
 -----
 
