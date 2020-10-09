@@ -13,8 +13,13 @@ An article about this investigation can be found at: https://www.cloudforesttech
 Exploring the Dataset
 -----
 
-Jupyter notebooks were used to conduct exploratory data analysis on the dataset, first checking the dataset for missing values and creating a statistical outline, followed by in-depth investigations into relationships between parameters (usually supported by visualisation): 
+Jupyter notebooks were used to conduct exploratory data analysis on the dataset, first checking the dataset for missing values and creating a statistical outline, followed by in-depth investigations into relationships between parameters (usually supported by visualisation).
 
+The individual test runs vary greatly in length, as shown in the distribution plot below. Allowing the motor to run for a period of time is important for establishing thermal equilibrium throughout the machine, so some of the shorter runs (<1 hr) could be discounted from the full analysis:
+
+![Image of Correlations](https://github.com/PMetcalf/electric_motor_thermal_modelling/blob/master/Reports/Figures/YC_Measurement_Session_Length_2020_08_25-11_45_21.png)
+
+Within the dataset, there are strong linear correlations between i_q and torque, and between yoke, tooth and winding temperatures:
 ![Image of Correlations](https://github.com/PMetcalf/electric_motor_thermal_modelling/blob/master/Reports/Figures/YC_Motor_Data_Correlations_2020_08_04-10_43_03.png)
 
 Predictive Modelling
@@ -26,6 +31,8 @@ The three sets of target variables included:
 1. Rotor temperature
 2. Stator temperatures (yoke, tooth and winding)
 3. Motor torque
+
+Using sklearn, ML predictive models were trained using linear regression, polynomial regression, decision trees and random forests. In some cases, training data also underwent Principal Component Analysis, although this did not appear to significantly improve model performance. Additionally, the leading random forest models also underwent hyperparameter optimisation to further enhance performance.
 
 Project Uses
 -----
