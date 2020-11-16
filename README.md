@@ -10,6 +10,13 @@ Being able to have strong estimators for the rotor temperature helps the automot
 
 An article about this investigation can be found at: https://www.cloudforesttechnologies.com/post/powering-e-motor-optimisation-a-machine-learning-approach
 
+Project Objectives
+-----
+
+1. To analyse motor thermal behaviour, and characterise performance.
+2. To develop predictive models for motor temperature behaviour.
+3. To develop predictive models for motor torque.
+
 Exploring the Dataset
 -----
 
@@ -33,14 +40,6 @@ The three sets of target variables included:
 3. Motor torque
 
 Using sklearn, ML predictive models were trained using linear regression, polynomial regression, decision trees and random forests. In some cases, training data also underwent Principal Component Analysis, although this did not appear to significantly improve model performance. Additionally, the leading random forest models also underwent hyperparameter optimisation to further enhance performance.
-
-Project Uses
------
-
-1. Data importation and visualisation.
-2. Data cleaning and preprocessing techniques.
-3. ML model training and optimisation.
-4. Model evaluation and comparison.
 
 Installation & Setup
 -----
