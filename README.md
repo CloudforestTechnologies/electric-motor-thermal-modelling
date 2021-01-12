@@ -4,6 +4,8 @@ This data analysis and machine learning project investigates relationships betwe
 
 The project starts with data visualisation and exploration, folowed by the development of predictive models for rotor and stator temperatures using linear regression, ensemble methods and neural networks using the Keras API.
 
+![Image of Motors](https://github.com/PMetcalf/electric_motor_thermal_modelling/blob/master/Miscellaneous/shutterstock_349645442.jpg)
+
 The most interesting target features are rotor / stator temperatures and torque, as these are not reliably and economically measurable in a commercial vehicle.
 
 Being able to have strong estimators for the rotor temperature helps the automotive industry to manufacture motors with less material and enables control strategies to utilize the motor to its maximum capability. A precise torque estimate leads to more accurate and adequate control of the motor, reducing power losses and eventually heat build-up.
