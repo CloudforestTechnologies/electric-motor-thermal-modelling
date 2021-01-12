@@ -29,6 +29,7 @@ The individual test runs vary greatly in length, as shown in the distribution pl
 ![Image of Correlations](https://github.com/PMetcalf/electric_motor_thermal_modelling/blob/master/Reports/Figures/YC_Measurement_Session_Length_2020_08_25-11_45_21.png)
 
 Within the dataset, there are strong linear correlations between i_q and torque, and between yoke, tooth and winding temperatures:
+
 ![Image of Correlations](https://github.com/PMetcalf/electric_motor_thermal_modelling/blob/master/Reports/Figures/YC_Motor_Data_Correlations_2020_08_04-10_43_03.png)
 
 Predictive Modelling
