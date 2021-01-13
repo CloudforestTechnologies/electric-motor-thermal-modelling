@@ -1,8 +1,8 @@
 # Electric Motor Modelling
 
-This data analysis and machine learning project investigates relationships between the thermal and performance parameters of an automotive (tractive) motor using bench test data from the LEA Department at Paderborn University. 
+This data analysis and machine learning project investigates relationships between the thermal and performance parameters of an automotive (tractive) motor, using bench test data from the LEA Department at Paderborn University. 
 
-The project starts with data visualisation and exploration, folowed by the development of predictive models for rotor and stator temperatures using linear regression, ensemble methods and neural networks using the Keras API.
+The project starts with data visualisation and exploration, followed by the development of predictive models for rotor and stator temperatures using linear regression, ensemble methods and neural networks using the Keras API.
 
 ![Image of Motors](https://github.com/PMetcalf/electric_motor_thermal_modelling/blob/master/Miscellaneous/shutterstock_349645442.jpg)
 
