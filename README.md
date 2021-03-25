@@ -46,7 +46,7 @@ The three sets of target variables included:
 
 Using sklearn, ML predictive models were trained using linear regression, polynomial regression, decision trees and random forests. In some cases, training data also underwent Principal Component Analysis, although this did not appear to significantly improve model performance. Additionally, the leading random forest models also underwent hyperparameter optimisation to further enhance performance.
 
-The input data for model training is slightly annonymised, so converting model predictions into sensor-comparable readings was not possible, but in general model accuracy was good (usually above 90%), and most models were able to compute predictions in a suitable time period (under 0.5s) for control use.
+The input data for model training is slightly annonymised, so converting model predictions into sensor-comparable readings was not possible, but in general model accuracy was good (above 90%), and most models were able to compute predictions in a suitable time period (under 0.5s / below the thermal latency of a physical sensor) for control use.
 
 Consult the Notebooks section of the repository for further information.
 
