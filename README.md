@@ -32,6 +32,8 @@ Within the dataset, there are strong linear correlations between i_q and torque,
 
 ![Image of Correlations](https://github.com/PMetcalf/electric_motor_thermal_modelling/blob/master/Reports/Figures/YC_Motor_Data_Correlations_2020_08_04-10_43_03.png)
 
+Consult the Notebooks section of the repository for further information.
+
 Predictive Modelling
 -----
 
@@ -44,6 +46,10 @@ The three sets of target variables included:
 
 Using sklearn, ML predictive models were trained using linear regression, polynomial regression, decision trees and random forests. In some cases, training data also underwent Principal Component Analysis, although this did not appear to significantly improve model performance. Additionally, the leading random forest models also underwent hyperparameter optimisation to further enhance performance.
 
+The input data for model training is slightly annonymised, so converting model predictions into sensor-comparable readings was not possible, but in general model accuracy was good (usually above 90%), and most models were able to compute predictions in a suitable time period (under 0.5s) for control use.
+
+Consult the Notebooks section of the repository for further information.
+
 Installation & Setup
 -----
 
@@ -51,10 +57,12 @@ The following packages are required to support this project:
 
 numpy, pandas, matplotlib, seaborn, sklearn, keras.
 
+Training data is sourced from the LEA Department of the University of Paderborn, via Kaggle: https://www.kaggle.com/wkirgsn/electric-motor-temperature
+
 Clone
 -----
 
-Clone this repository from: https://github.com/PMetcalf/electric_motor_thermal_modelling.git
+Clone this repository from: https://github.com/CloudforestTechnologies/electric-motor-thermal-modelling.git
 
 Acknowledgements
 -----
